@@ -50,6 +50,10 @@ public class CursosController {
 		return service.recuperarTodos().stream().map(curso->curso.getTematica())
 				.distinct().collect(Collectors.toList());
 	}
+	@GetMapping(value="cursos",produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Curso> cursos(){
+		return service.recuperarTodos();
+	}
 	
 	
 	
